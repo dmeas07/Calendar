@@ -1,0 +1,74 @@
+h1{
+    background-color: rgba(0, 0, 0);
+    color: white;
+    margin: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+h3{
+    text-align: center;
+}
+
+body{
+    background-image: url(https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-1280.jpg?itok=9hyNVMwe);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 170%;
+    
+}
+.container{
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container .list{
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 3rem;
+    flex: 3;
+    color: white;
+}
+
+.container .info{
+    margin: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    max-width: 100%;
+    max-height: 100%;
+    padding: 3rem;
+    flex: 1;
+}
+
+.my-control {
+    margin-bottom: 10px;
+}
+
+.my-control label {
+    display: inline-block;
+    width: 80px;
+    text-align: left;    
+}
+
+.my-control input {
+    padding: 3px 5px;
+    margin-left: 5px;
+}
+
+.my-icon{
+    font-size: 25px;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.my-icon.fa-exclamation{
+    color: red;
+}
+
+#btnSave{
+    margin-top: 1rem;
+}

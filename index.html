@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
+
+    <link rel="stylesheet" href="./style/style.css">
+
+    <title>Task Manager</title>
+</head>
+
+<body>
+
+    <h1>My Task Manager</h1>
+
+    <main class="container">
+
+        <section class="list">
+            <h3>Current Task</h3>
+
+            <p class="paragraph" id="hideMe">Lorem ipsum dolor sit amet.</p>
+
+            <button class="btn btn-primary"id="hideBtnBtn">Button</button>
+
+        </section>
+    
+        <section class="info">
+            <h3>Task Information</h3>
+
+                <div class="my-control">
+                    <label for="important">Important</label>
+                    <i class="my-icon fas fa-thumbtack" id="btnChangeIcon"></i>
+                </div>
+
+                <div class="my-control">
+                    <label for="titles">Title</label>
+                    <input class="form-control" type="text" placeholder="Enter a Title">
+                </div>
+
+                <div class="my-control">
+                    <label for="date">Due Date</label>
+                    <input class="form-control" type="text" placeholder="Time">
+                </div>
+
+                <div class="my-control">
+                    <label for="description">Description</label>
+                    <input class="form-control" type="text" placeholder="Enter a description">
+                </div>
+
+                <div class="my-control">
+                    <label for="tag">Tag</label>
+                    <input class="form-control" type="text" placeholder="Select a Tag">
+                 </div>
+
+                <div class="my-control">
+                    <label for="color">Color</label>
+                    <input class="form-control" type="text" placeholder="Select Color">
+                </div>
+
+                <div class="my-control">
+                    <label for="category">Category</label>
+                    <input class="form-control" type="text" placeholder="Select a Category">
+                </div>
+
+                <div class="my-control">
+                    <button id="btnSave" class="btn btn-primary">Save Task</button>
+                </div>
+
+
+        </section>
+
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    <script src="./script/app.js"></script>
+
+</body>
+
+</html>
+
+<!-- Task
+    important
+    titles
+    time
+    description
+    tag
+    color
+    catrgory
+-->
