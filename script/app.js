@@ -2,6 +2,10 @@ var importantIcon = "fas fa-exclamation";
 
 var nonImportantIcon = "fas fa-thumbtack";
 
+var showTaskBtn = "fas fa-bars";
+
+var hideTaskBtn = "fas fa-minus";
+
 var isImportant = false;
 
 var visible = true;
@@ -24,11 +28,15 @@ function hide() {
   if (visible) {
     $("#taskList").hide();
 
+    $("#hideBtnBtn").removeClass(hideTaskBtn).addClass(showTaskBtn);
+
     visible = false;
 
     console.log("hidden");
   } else {
     $("#taskList").show();
+
+    $("#hideBtnBtn").removeClass(showTaskBtn).addClass(hideTaskBtn);
 
     visible = true;
 
@@ -47,6 +55,22 @@ function saveTask() {
   let category = $("#txtCategory").val();
 
   let task = new Task(title, date, description, tag, color, category);
+
+  // save on server
+  $.ajax({
+    type: "POST",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks/",
+    data: JSON.stringify(task),
+    contentType: "application/json",
+    success: function (response) {
+      displayTask(task);
+      clearForm();
+    },
+    error: function (details) {
+      console.log("Save failed", details);
+      alert("error");
+    },
+  });
 
   displayTask(task);
 
@@ -86,14 +110,47 @@ function displayTask(task) {
   $("#taskList").append(syntax);
 }
 
-function changeIcon() {}
+// function testRequest() {
+//   // this is a test HTTP request
+//   $.ajax({
+//     type: "GET",
+//     url: "https://fsdiapi.azurewebsites.net/",
+//     success: function (data) {},
+//     error: function (details) {},
+//   });
+// }
 
-function toggleSelection() {}
+function fetchTask() {
+  $.ajax({
+    type: "GET",
+    url: "https://fsdiapi.azurewebsites.net/api/tasks",
+    success: function (response) {
+      console.log("Fetch response", response);
+
+      let allTasks = JSON.parse(response);
+
+      for (let i = 0; i < allTasks.length; i++) {
+        // displayTask(allTasks[i]);
+        let task = allTasks[i];
+
+        if (task.name == "Daravy") {
+          displayTask(task);
+        } else {
+          console.log("nothing found");
+        }
+      }
+    },
+    error: function (details) {
+      console.log("Error", details);
+    },
+  });
+}
 
 function init() {
   console.log("Task Manager");
 
   // load prev data
+  fetchTask();
 
   // catch events
   $("#btnSave").click(saveTask);

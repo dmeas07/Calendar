@@ -3,11 +3,17 @@ h1{
     color: white;
     margin: 0;
     text-align: center;
+    text-decoration: underline;
+    letter-spacing: .5rem;
     padding: 1rem;
 }
 
 h3{
     text-align: center;
+    letter-spacing: .5rem;
+    font-size: 25px;
+    text-decoration: underline;
+    line-height: 2 rem;
 }
 
 body{
@@ -25,7 +31,7 @@ body{
     max-height: 100%;
 }
 
-.container .list{
+.list{
     margin: 0;
     max-width: 100%;
     max-height: 100%;
@@ -74,9 +80,6 @@ body{
     margin-top: 1rem;
 }
 
-#hideBtnBtn{
-    margin-top: 3rem;
-}
 
 .task {
     background-color: rgba(0, 0, 0, 0.4);
@@ -88,7 +91,7 @@ body{
 }
 
 .task:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
     border: 1px solid white;
     
     border-radius: 1rem;
